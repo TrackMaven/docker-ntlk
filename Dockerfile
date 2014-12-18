@@ -3,4 +3,5 @@ MAINTAINER Jonathan Evans "jon@trackmaven.com"
 
 RUN pip install -U nltk
 
-CMD ["python"]
+ENV CORPORA brown
+CMD python -m nltk.downloader $CORPORA; python
